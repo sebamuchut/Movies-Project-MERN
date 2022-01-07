@@ -1,50 +1,50 @@
 const { Schema, model } = require('mongoose');
 
 const Movieschema = new Schema({
-    title: {
+    Title: {
         type: String,
         required: true
     },
-    year: {
+    Year: {
         type: Number,
         required: true
     },
-    rated: {
+    Rated: {
         type: String,
     },
-    runtime: {
+    Runtime: {
         type: String
     },
-    genre: {
-        type: String,
-        required: true
-    },
-    director: {
-        type: String
-    },
-    writer: {
-        type: String
-    },
-    actors: {
-        type: String
-    },
-    plot: {
+    Genre: {
         type: String,
         required: true
     },
-    language: {
+    Director: {
         type: String
     },
-    country: {
+    Writer: {
         type: String
     },
-    poster: {
+    Actors: {
         type: String
     },
-    ratings: {
+    Plot: {
+        type: String,
+        required: true
+    },
+    Language: {
+        type: String
+    },
+    Country: {
+        type: String
+    },
+    Poster: {
+        type: String
+    },
+    Ratings: {
         type: Number
     },
-    type: {
+    Type: {
         type: String,
         ref: "Type",
         required: true

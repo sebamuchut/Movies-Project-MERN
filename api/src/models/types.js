@@ -1,13 +1,13 @@
 const { Schema, model } = require('mongoose');
 
 const schema = new Schema({
-    name: {
+    Name: {
         type: String,
         required: true,
         unique: true,
         ref: 'Movie'
     },
-    movies: [
+    Movies: [
         {
             type: Schema.Types.ObjectId,
             ref: "Movie"

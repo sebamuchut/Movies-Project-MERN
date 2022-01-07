@@ -9,7 +9,7 @@ module.exports = {
             const movieCreated = await movie.save()
             
             //check if type of movie already exists in db
-            const query = { name: req.body.type }
+            const query = { Name: req.body.type }
             await Type.findOneAndUpdate(
                 query,
                 {$push: { movies: movieCreated._id } },
