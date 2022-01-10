@@ -7,15 +7,15 @@ module.exports = {
         try {
             //create the new movie
             const movieCreated = await movie.save()
-            
+
             //check if type of movie already exists in db
-            const query = { Name: req.body.type }
+            const query = { Name: req.body.Type }
             await Type.findOneAndUpdate(
                 query,
-                {$push: { movies: movieCreated._id } },
+                {$push: { Movies: movieCreated._id } },
                 { upsert: true}
                 )
-          
+
             console.log('Succesfully saved')
             res.json({'message': 'Succesfully saved', 'new Movie': movieCreated})
             

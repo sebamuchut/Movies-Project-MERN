@@ -5,6 +5,7 @@ const { deleteMovie } = require('../controllers/deleteMovie');
 const { getTypes } = require('../controllers/getTypes');
 const { searchById } = require('../controllers/searchMovieById');
 const { searchAll } = require('../controllers/searchMovies');
+const { updateMovie } = require('../controllers/updateMovie');
 const router = express.Router();
 
 router
@@ -16,6 +17,8 @@ router
     .post('/addtype', addTypeToDb)
 
     .delete('/delete/:id', deleteMovie)
+
+    .put('/create/:id', updateMovie)
 
 
 
