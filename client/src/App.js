@@ -1,32 +1,14 @@
-import { useEffect, useState } from 'react';
-import Search from './actions/searchAction';
+import {Route, Routes} from 'react-router-dom';
+import { AddMovie } from './components/AddMovieComponent';
+import { DetailMovie } from './components/DetailComponent';
+import { LandingPage } from './LandingPage';
 
-const App = () => {
-  const [ results, setResults ] = useState()
-  const [ searching, setSearching ] = useState({name: 'avengers'})
-
-  const callingSearch = async () => {
-    let data = await Search(searching)
-    data && setResults(data)
-  };
-
-  useEffect(() => {
-    callingSearch();
-  }, []);
-  
-console.log('results: ', results)
-  return (
-    <div>
-      {
-        results ?
-        results.map(e => (
-          console.log(e),
-          <h4>{e.Title}</h4>
-        ))
-        : null
-      }
-    </div>
-  );
-}
-
-export default App;
+export const App = () => {
+    return (
+        <Routes>
+            <Route path='/' exact element={ <LandingPage /> } />
+            <Route path='/detail/:id' element={ <DetailMovie />} />
+            <Route path='/add' element={ <AddMovie /> } />
+        </Routes>
+    )
+};
